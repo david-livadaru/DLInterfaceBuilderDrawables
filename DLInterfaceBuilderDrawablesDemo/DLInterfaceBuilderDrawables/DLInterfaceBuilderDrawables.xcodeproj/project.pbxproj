@@ -7,10 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */; };
+		6311FA701D3D5ED100A114A1 /* DLSelectorPerformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */; };
+		6311FA731D3D5F2E00A114A1 /* StringValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */; };
+		6311FA781D3D623B00A114A1 /* UIKit+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */; };
+		6311FA7A1D3D628100A114A1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA791D3D628100A114A1 /* Style.swift */; };
+		6311FA7C1D3D683B00A114A1 /* CALayerDrawableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA7B1D3D683B00A114A1 /* CALayerDrawableType.swift */; };
+		6311FA7E1D3D6A2B00A114A1 /* UIViewDrawableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA7D1D3D6A2B00A114A1 /* UIViewDrawableType.swift */; };
+		6311FA821D3D6DBE00A114A1 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA811D3D6DBE00A114A1 /* DrawableView.swift */; };
 		6377EE4D1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377EE4C1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableType.swift; sourceTree = "<group>"; };
+		6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSelectorPerformer.h; sourceTree = "<group>"; };
+		6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSelectorPerformer.m; sourceTree = "<group>"; };
+		6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValueConvertible.swift; sourceTree = "<group>"; };
+		6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Additions.swift"; sourceTree = "<group>"; };
+		6311FA791D3D628100A114A1 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		6311FA7B1D3D683B00A114A1 /* CALayerDrawableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerDrawableType.swift; sourceTree = "<group>"; };
+		6311FA7D1D3D6A2B00A114A1 /* UIViewDrawableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawableType.swift; sourceTree = "<group>"; };
+		6311FA811D3D6DBE00A114A1 /* DrawableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
 		6377EE491D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLInterfaceBuilderDrawables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6377EE4C1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLInterfaceBuilderDrawables.h; sourceTree = "<group>"; };
 		6377EE4E1D3D52E000D5FAFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +45,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6311FA691D3D5DF400A114A1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */,
+				6311FA7B1D3D683B00A114A1 /* CALayerDrawableType.swift */,
+				6311FA7D1D3D6A2B00A114A1 /* UIViewDrawableType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6311FA6A1D3D5DF400A114A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6311FA811D3D6DBE00A114A1 /* DrawableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6311FA6D1D3D5ED100A114A1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */,
+				6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */,
+				6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */,
+				6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */,
+				6311FA791D3D628100A114A1 /* Style.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		6377EE3F1D3D52E000D5FAFC = {
 			isa = PBXGroup;
 			children = (
@@ -47,6 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				6377EE4C1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h */,
+				6311FA6D1D3D5ED100A114A1 /* Foundation */,
+				6311FA691D3D5DF400A114A1 /* Protocols */,
+				6311FA6A1D3D5DF400A114A1 /* Views */,
 				6377EE4E1D3D52E000D5FAFC /* Info.plist */,
 			);
 			path = DLInterfaceBuilderDrawables;
@@ -59,6 +110,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6311FA701D3D5ED100A114A1 /* DLSelectorPerformer.h in Headers */,
 				6377EE4D1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6311FA781D3D623B00A114A1 /* UIKit+Additions.swift in Sources */,
+				6311FA7C1D3D683B00A114A1 /* CALayerDrawableType.swift in Sources */,
+				6311FA821D3D6DBE00A114A1 /* DrawableView.swift in Sources */,
+				6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */,
+				6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */,
+				6311FA7E1D3D6A2B00A114A1 /* UIViewDrawableType.swift in Sources */,
+				6311FA731D3D5F2E00A114A1 /* StringValueConvertible.swift in Sources */,
+				6311FA7A1D3D628100A114A1 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +290,7 @@
 		6377EE521D3D52E000D5FAFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -247,6 +308,7 @@
 		6377EE531D3D52E000D5FAFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -280,6 +342,7 @@
 				6377EE531D3D52E000D5FAFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
