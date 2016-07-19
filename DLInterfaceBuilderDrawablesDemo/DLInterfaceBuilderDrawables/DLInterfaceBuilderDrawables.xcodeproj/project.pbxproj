@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6311321D1D3EE7370052EE4F /* DrawableBorderSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311321C1D3EE7370052EE4F /* DrawableBorderSideView.swift */; };
+		6311321F1D3EE9B20052EE4F /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311321E1D3EE9B20052EE4F /* BorderSide.swift */; };
 		6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */; };
 		6311FA701D3D5ED100A114A1 /* DLSelectorPerformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6311321C1D3EE7370052EE4F /* DrawableBorderSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableBorderSideView.swift; sourceTree = "<group>"; };
+		6311321E1D3EE9B20052EE4F /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableType.swift; sourceTree = "<group>"; };
 		6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSelectorPerformer.h; sourceTree = "<group>"; };
 		6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSelectorPerformer.m; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				6311FA811D3D6DBE00A114A1 /* DrawableView.swift */,
+				6311321C1D3EE7370052EE4F /* DrawableBorderSideView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -71,6 +76,7 @@
 				6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */,
 				6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */,
 				6311FA791D3D628100A114A1 /* Style.swift */,
+				6311321E1D3EE9B20052EE4F /* BorderSide.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -186,10 +192,12 @@
 				6311FA7C1D3D683B00A114A1 /* CALayerDrawableType.swift in Sources */,
 				6311FA821D3D6DBE00A114A1 /* DrawableView.swift in Sources */,
 				6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */,
+				6311321F1D3EE9B20052EE4F /* BorderSide.swift in Sources */,
 				6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */,
 				6311FA7E1D3D6A2B00A114A1 /* UIViewDrawableType.swift in Sources */,
 				6311FA731D3D5F2E00A114A1 /* StringValueConvertible.swift in Sources */,
 				6311FA7A1D3D628100A114A1 /* Style.swift in Sources */,
+				6311321D1D3EE7370052EE4F /* DrawableBorderSideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
