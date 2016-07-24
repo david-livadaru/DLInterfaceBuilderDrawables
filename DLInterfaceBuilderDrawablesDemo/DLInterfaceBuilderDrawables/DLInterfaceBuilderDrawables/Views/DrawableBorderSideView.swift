@@ -13,7 +13,7 @@ private protocol LineRenderedType {
 }
 
 extension LineRenderedType where Self : UIView {
-    func drawLine(fromPoint fromPoint: CGPoint, toPoint: CGPoint) {
+    private func drawLine(fromPoint fromPoint: CGPoint, toPoint: CGPoint) {
         let context = UIGraphicsGetCurrentContext()
         
         CGContextBeginPath(context)
@@ -24,7 +24,7 @@ extension LineRenderedType where Self : UIView {
     }
 }
 
-@IBDesignable public class DrawableBorderSideView: UIView, DrawableType, LineRenderedType {
+@IBDesignable public class DrawableBorderSideView : UIView, DrawableType, LineRenderedType {
     @IBInspectable public var borderColorName: String = "" {
         didSet {
             setNeedsDisplay()
@@ -37,7 +37,7 @@ extension LineRenderedType where Self : UIView {
     }
     @IBInspectable public var borderSides: String = "" {
         didSet {
-            borderSidesList = BorderSides.convertFrom(string: borderSides)
+            borderSidesList = BorderSides.convert(fromString: borderSides)
             setNeedsDisplay()
         }
     }
@@ -51,7 +51,7 @@ extension LineRenderedType where Self : UIView {
         
         CGContextSaveGState(context)
         
-        if let borderColor: UIColor = convertFrom(string: borderColorName) {
+        if let borderColor: UIColor = convert(fromString: borderColorName) {
             borderColor.setStroke()
         }
         
@@ -79,5 +79,4 @@ extension LineRenderedType where Self : UIView {
         
         CGContextRestoreGState(context)
     }
-
 }

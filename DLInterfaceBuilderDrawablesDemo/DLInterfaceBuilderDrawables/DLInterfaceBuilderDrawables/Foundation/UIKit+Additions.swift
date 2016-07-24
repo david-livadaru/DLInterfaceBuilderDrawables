@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIColor : StringValueConvertibleClass, DrawableType {
-    public static func convertFrom(string string: String) -> AnyObject? {
+    public static func convert(fromString string: String) -> AnyObject? {
         let components = string.componentsSeparatedByString(".")
         if let colorName = components.first,
             let color = DLSelectorPerformer.performSelector(colorName, forClass: String(UIColor)) as? UIColor {
-            if components.count > 1, let colorAlphaFloat: Float? = Float(components[2]) {
+            if components.count > 1, let colorAlphaFloat: Float? = Float(components[1]) {
                 let colorAlpha = colorAlphaFloat ?? 100.0
                 let colorAlphaComponent = CGFloat(opacity(from: colorAlpha / 100.0))
                 return color.colorWithAlphaComponent(colorAlphaComponent)
@@ -27,11 +27,17 @@ extension UIColor : StringValueConvertibleClass, DrawableType {
 
 extension NSAttributedString {
     convenience public init(text: String, styleName: String) {
-        let style: Style = convertFrom(string: styleName) ?? Style()
+        let style: Style = convert(fromString: styleName) ?? Style()
         self.init(text: text, style: style)
     }
     
     convenience public init(text: String, style: Style) {
         self.init(string: text, attributes: style.attributes)
+    }
+}
+
+extension CGRect {
+    func toUIEdgeInsets() -> UIEdgeInsets {
+        return UIEdgeInsets(top: minY, left: minX, bottom: height, right: width)
     }
 }

@@ -1,14 +1,14 @@
 //
-//  DrawableView.swift
+//  DrawableImageView.swift
 //  DLInterfaceBuilderDrawables
 //
-//  Created by David Livadaru on 18/07/16.
+//  Created by David Livadaru on 24/07/16.
 //  Copyright © 2016 Community. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class DrawableView : UIView, BackgroundColorApplicable, TintApplicable,
+@IBDesignable public class DrawableImageView : UIImageView, BackgroundColorApplicable, TintApplicable,
     CornerRadiusApplicable, BorderApplicable, ShadowApplicable {
     @IBInspectable public var backgroundColorName: String = "" {
         didSet {

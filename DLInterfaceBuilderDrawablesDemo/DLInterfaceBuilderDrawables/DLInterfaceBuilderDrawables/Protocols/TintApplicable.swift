@@ -1,47 +1,38 @@
 //
-//  UIViewDrawableType.swift
+//  TintApplicable.swift
 //  DLInterfaceBuilderDrawables
 //
-//  Created by David Livadaru on 18/07/16.
+//  Created by David Livadaru on 24/07/16.
 //  Copyright © 2016 Community. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public protocol UIViewDrawableType : CALayerDrawableType {
-    var backgroundColorName: String { get set }
+public protocol TintApplicable : DrawableType {
     var tintColorName: String { get set }
     var tintAdjustmentModeName: String { get set }
     
-    func applyBackgroundColor()
     func applyTintColor()
     func applyTintColorAdjustmentMode()
 }
 
-extension UIViewDrawableType where Self : UIView {
-    public func applyBackgroundColor() {
-        if backgroundColorName.characters.count > 0,
-            let color: UIColor = convertFrom(string: backgroundColorName) {
-            backgroundColor = color
-        }
-    }
-    
+extension TintApplicable where Self : UIView {
     public func applyTintColor() {
-        if tintColorName.characters.count > 0, let color: UIColor = convertFrom(string: tintColorName) {
+        if tintColorName.characters.count > 0, let color: UIColor = convert(fromString: tintColorName) {
             tintColor = color
         }
     }
     
     public func applyTintColorAdjustmentMode() {
         if tintAdjustmentModeName.characters.count > 0,
-            let adjustmentMode = UIViewTintAdjustmentMode.convertFrom(string: tintAdjustmentModeName) {
+            let adjustmentMode = UIViewTintAdjustmentMode.convert(fromString: tintAdjustmentModeName) {
             tintAdjustmentMode = adjustmentMode
         }
     }
 }
 
 extension UIViewTintAdjustmentMode : StringValueConvertibleType {
-    public static func convertFrom(string string: String) -> UIViewTintAdjustmentMode? {
+    public static func convert(fromString string: String) -> UIViewTintAdjustmentMode? {
         guard string.characters.count > 0 else { return nil }
         switch string.lowercaseString {
         case "normal":

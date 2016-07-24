@@ -22,7 +22,7 @@ public struct BorderSides : OptionSetType {
 }
 
 extension BorderSides : StringValueConvertibleType {
-    public static func convertFrom(string string: String) -> BorderSides? {
+    public static func convert(fromString string: String) -> BorderSides? {
         let nonSpaceString = string.stringByReplacingOccurrencesOfString(" ", withString: "")
         let stringSides = nonSpaceString.componentsSeparatedByString(",")
         var sides: BorderSides? = nil
