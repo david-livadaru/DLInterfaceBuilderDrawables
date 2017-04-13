@@ -13,17 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation DLInvocation (FoundationMapping)
 
 - (nullable NSInvocation *)convertToFoundationInvocation {
-    NSMethodSignature *methodSignature = [self.class methodSignatureForSelector:self.selector];
+    id target = self.target != nil ? self.target : self.class;
+    NSMethodSignature *methodSignature = [target methodSignatureForSelector:self.selector];
     
     if (methodSignature == nil) {
-        NSLog(@"Failed to create method signature for class '%@' using selector '%@'.",
-              NSStringFromClass(self.class), NSStringFromSelector(self.selector));
+        NSLog(@"Failed to create method signature for class '%@'.", NSStringFromClass(self.class));
         return nil;
     }
     
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invocation setSelector:self.selector];
-    [invocation setTarget:self.class];
+    invocation.selector = self.selector;
+    invocation.target = target;
     
     return invocation;
 }

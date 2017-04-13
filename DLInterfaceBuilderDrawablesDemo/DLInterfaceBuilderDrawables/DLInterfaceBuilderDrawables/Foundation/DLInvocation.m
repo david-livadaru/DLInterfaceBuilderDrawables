@@ -11,6 +11,7 @@
 
 @interface DLInvocation ()
 
+@property (nonatomic, nullable) id target;
 @property (nonatomic) Class class;
 @property (nonatomic) SEL selector;
 
@@ -18,15 +19,34 @@
 
 @implementation DLInvocation
 
-- (instancetype)initWithClass:(Class)class selector:(SEL)selector {
+- (instancetype)initWithTarget:(nullable id)target class:(Class)class selector:(SEL)selector {
     self = [super init];
     
     if (self) {
+        self.target = target;
         self.class = class;
         self.selector = selector;
     }
     
     return self;
+}
+
++ (instancetype)invocationWithTarget:(id)target selector:(SEL)selector {
+    return [[DLInvocation alloc] initWithTarget:target class:[target class] selector:selector];
+}
+
++ (instancetype)invocationWithClass:(Class)class selector:(SEL)selector {
+    return [[DLInvocation alloc] initWithTarget:nil class:class selector:selector];
+}
+
++ (nullable instancetype)invocationWithTarget:(id)target selectorName:(NSString *)selectorName {
+    SEL selector = [DLInvocation selectorFromName:selectorName];
+    
+    if (selector == nil) {
+        return nil;
+    }
+    
+    return [DLInvocation invocationWithTarget:target selector:selector];
 }
 
 + (nullable instancetype)invocationWithClass:(Class)class selectorName:(NSString *)selectorName {
@@ -36,7 +56,7 @@
         return nil;
     }
     
-    return [[DLInvocation alloc] initWithClass:class selector:selector];
+    return [DLInvocation invocationWithClass:class selector:selector];
 }
 
 + (nullable instancetype)invocationWithClassName:(NSString *)className selector:(SEL)selector {
@@ -46,7 +66,7 @@
         return nil;
     }
     
-    return [[DLInvocation alloc] initWithClass:class selector:selector];
+    return [DLInvocation invocationWithClass:class selector:selector];
 }
 
 + (nullable instancetype)invocationWithClassName:(NSString *)className selectorName:(NSString *)selectorName {
@@ -57,7 +77,7 @@
         return nil;
     }
     
-    return [[DLInvocation alloc] initWithClass:class selector:selector];
+    return [DLInvocation invocationWithClass:class selector:selector];
 }
 
 + (nullable Class)classFromName:(NSString *)className {
