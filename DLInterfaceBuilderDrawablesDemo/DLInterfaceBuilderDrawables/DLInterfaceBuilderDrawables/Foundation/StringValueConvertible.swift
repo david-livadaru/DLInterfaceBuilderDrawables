@@ -9,12 +9,12 @@
 import Foundation
 
 public protocol StringValueConvertibleType {
-    static func convert(fromString string: String) -> Self?
+    static func convert(from string: String) -> Self?
 }
 
 public protocol StringValueConvertibleClass: class {
     static func moduleName() -> String
-    static func convert(fromString string: String) -> AnyObject?
+    static func convert(from string: String) -> AnyObject?
 }
 
 extension StringValueConvertibleClass where Self : NSObject {
@@ -22,17 +22,17 @@ extension StringValueConvertibleClass where Self : NSObject {
         return "DLInterfaceBuilderDrawables"
     }
     
-    static public  func convert(fromString string: String) -> AnyObject? {
-        if let value = DLSelectorPerformer.performSelector(string, forClass: moduleName() + "." + String(Self)) {
-            return value
+    static public func convert(from string: String) -> AnyObject? {
+        if let value = DLSelectorPerformer.performSelector(string, forClass: moduleName() + "." + String(describing: Self.self)) {
+            return value as AnyObject
         } else {
             return nil
         }
     }
 }
 
-public func convert<T : StringValueConvertibleClass>(fromString string: String) -> T? {
-    if string.characters.count > 0, let instance = T.convert(fromString: string) as? T {
+public func convert<T: StringValueConvertibleClass>(from string: String) -> T? {
+    if string.characters.count > 0, let instance = T.convert(from: string) as? T {
         return instance
     } else {
         return nil

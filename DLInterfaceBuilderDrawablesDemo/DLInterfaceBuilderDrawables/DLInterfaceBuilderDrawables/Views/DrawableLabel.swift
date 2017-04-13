@@ -8,42 +8,42 @@
 
 import UIKit
 
-@IBDesignable public class DrawableLabel: UILabel, BackgroundColorApplicable, CornerRadiusApplicable, BorderApplicable, TextType, AttributedTextType {
-    @IBInspectable public var backgroundColorName: String = "" {
+@IBDesignable open class DrawableLabel: UILabel, BackgroundColorApplicable, CornerRadiusApplicable, BorderApplicable, TextType, AttributedTextType {
+    @IBInspectable open var backgroundColorName: String = "" {
         didSet {
             applyBackgroundColor()
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0.0 {
         didSet {
             applyCornerRadius()
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0.0 {
+    @IBInspectable open var borderWidth: CGFloat = 0.0 {
         didSet {
             applyBorder()
         }
     }
-    @IBInspectable public var borderColorName: String = "" {
+    @IBInspectable open var borderColorName: String = "" {
         didSet {
             applyBorder()
         }
     }
     
-    @IBInspectable public var textStyleName: String = "" {
+    @IBInspectable open var textStyleName: String = "" {
         didSet {
             updateAttributedText()
         }
     }
-    @IBInspectable public var textColorName: String = "" {
+    @IBInspectable open var textColorName: String = "" {
         didSet {
             updateAttributedText()
         }
     }
     
-    public override var text: String? {
+    open override var text: String? {
         didSet {
             updateAttributedText()
         }

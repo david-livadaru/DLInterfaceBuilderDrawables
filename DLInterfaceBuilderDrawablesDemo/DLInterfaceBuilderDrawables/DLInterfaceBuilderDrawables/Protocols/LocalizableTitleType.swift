@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol LocalizableTitleType : DrawableType {
+public protocol LocalizableTitleType: DrawableType {
     var localizedTitleKey: String { get set }
     var localizedTitleComment: String { get set }
     

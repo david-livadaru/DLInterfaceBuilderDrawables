@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 
-public class Style : NSObject {
-    public var attributes: [String : AnyObject] = [:]
+open class Style: NSObject {
+    open var attributes: [String : AnyObject] = [:]
+    
+    static func redTextStyle() -> Style {
+        let style = Style()
+        style.attributes[NSForegroundColorAttributeName] = UIColor.red
+        return style
+    }
 }
 
-extension Style : StringValueConvertibleClass {}
+extension Style: StringValueConvertibleClass {}

@@ -8,15 +8,15 @@
 
 import UIKit
 
-@IBDesignable public class DrawableActivityIndicator : UIActivityIndicatorView, DrawableType {
-    @IBInspectable public var colorName: String = "" {
+@IBDesignable open class DrawableActivityIndicator: UIActivityIndicatorView, DrawableType {
+    @IBInspectable open var colorName: String = "" {
         didSet {
             applyActivityColor()
         }
     }
     
     func applyActivityColor() {
-        if let color: UIColor = convert(fromString: colorName) {
+        if let color: UIColor = DLInterfaceBuilderDrawables.convert(from: colorName) {
             self.color = color
         }
     }

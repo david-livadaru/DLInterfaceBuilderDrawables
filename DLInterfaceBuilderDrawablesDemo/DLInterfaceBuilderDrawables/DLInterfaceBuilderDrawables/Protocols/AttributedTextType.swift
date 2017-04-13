@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol AttributedTextType : TextType {
+public protocol AttributedTextType: TextType {
     var textStyleName: String { get set }
     var textColorName: String { get set }
     var attributedText: NSAttributedString? { get set }
@@ -20,10 +20,10 @@ extension AttributedTextType where Self : UIView {
     public func updateAttributedText() {
         var attributes: [String : AnyObject] = [:]
         if textStyleName.characters.count > 0,
-            let style: Style = convert(fromString: textStyleName) {
+            let style: Style = DLInterfaceBuilderDrawables.convert(from: textStyleName) {
             attributes.append(fromDictionary: style.attributes)
         }
-        if let color: UIColor = convert(fromString: textColorName) {
+        if let color: UIColor = DLInterfaceBuilderDrawables.convert(from: textColorName) {
             attributes[NSForegroundColorAttributeName] = color
         }
         attributedText = NSAttributedString(string: text ?? "", attributes: attributes)

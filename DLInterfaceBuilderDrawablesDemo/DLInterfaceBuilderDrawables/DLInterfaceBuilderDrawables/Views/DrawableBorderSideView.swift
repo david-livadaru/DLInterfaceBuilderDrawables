@@ -9,74 +9,74 @@
 import UIKit
 
 private protocol LineRenderedType {
-    func drawLine(fromPoint fromPoint: CGPoint, toPoint: CGPoint)
+    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint)
 }
 
 extension LineRenderedType where Self : UIView {
-    private func drawLine(fromPoint fromPoint: CGPoint, toPoint: CGPoint) {
-        let context = UIGraphicsGetCurrentContext()
+    fileprivate func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         
-        CGContextBeginPath(context)
-        CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
-        CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
-        CGContextClosePath(context)
-        CGContextStrokePath(context)
+        context.beginPath()
+        context.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
+        context.addLine(to: CGPoint(x: toPoint.x, y: toPoint.y))
+        context.closePath()
+        context.strokePath()
     }
 }
 
-@IBDesignable public class DrawableBorderSideView : UIView, DrawableType, LineRenderedType {
-    @IBInspectable public var borderColorName: String = "" {
+@IBDesignable open class DrawableBorderSideView: UIView, DrawableType, LineRenderedType {
+    @IBInspectable open var borderColorName: String = "" {
         didSet {
             setNeedsDisplay()
         }
     }
-    @IBInspectable public var borderWidth: CGFloat = 0.0 {
+    @IBInspectable open var borderWidth: CGFloat = 0.0 {
         didSet {
             setNeedsDisplay()
         }
     }
-    @IBInspectable public var borderSides: String = "" {
+    @IBInspectable open var borderSides: String = "" {
         didSet {
-            borderSidesList = BorderSides.convert(fromString: borderSides)
+            borderSidesList = BorderSides.convert(from: borderSides)
             setNeedsDisplay()
         }
     }
     private var borderSidesList: BorderSides?
     
-    override public func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override open func draw(_ rect: CGRect) {
+        super.draw(rect)
         
         // Drawing code
-        let context = UIGraphicsGetCurrentContext()
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         
-        CGContextSaveGState(context)
+        context.saveGState()
         
-        if let borderColor: UIColor = convert(fromString: borderColorName) {
+        if let borderColor: UIColor = DLInterfaceBuilderDrawables.convert(from: borderColorName) {
             borderColor.setStroke()
         }
         
-        CGContextSetLineWidth(context, borderWidth)
+        context.setLineWidth(borderWidth)
         
         if borderSidesList?.contains(.Top) == true {
-            drawLine(fromPoint: CGPoint(x: rect.minX, y: rect.minY),
-                     toPoint: CGPoint(x: rect.maxX, y: rect.minY))
+            drawLine(from: CGPoint(x: rect.minX, y: rect.minY),
+                     to: CGPoint(x: rect.maxX, y: rect.minY))
         }
         
         if borderSidesList?.contains(.Left) == true {
-            drawLine(fromPoint: CGPoint(x: rect.minX, y: rect.minY),
-                     toPoint: CGPoint(x: rect.minX, y: rect.maxY))
+            drawLine(from: CGPoint(x: rect.minX, y: rect.minY),
+                     to: CGPoint(x: rect.minX, y: rect.maxY))
         }
         
         if borderSidesList?.contains(.Bottom) == true {
-            drawLine(fromPoint: CGPoint(x: rect.minX, y: rect.maxY),
-                     toPoint: CGPoint(x: rect.maxX, y: rect.maxY))
+            drawLine(from: CGPoint(x: rect.minX, y: rect.maxY),
+                     to: CGPoint(x: rect.maxX, y: rect.maxY))
         }
         
         if borderSidesList?.contains(.Right) == true {
-            drawLine(fromPoint: CGPoint(x: rect.maxX, y: rect.minY),
-                     toPoint: CGPoint(x: rect.maxX, y: rect.maxY))
+            drawLine(from: CGPoint(x: rect.maxX, y: rect.minY),
+                     to: CGPoint(x: rect.maxX, y: rect.maxY))
         }
         
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 }

@@ -8,25 +8,25 @@
 
 import UIKit
 
-@IBDesignable public class DrawableTabBar : UITabBar, BackgroundColorApplicable, TintApplicable,
+@IBDesignable open class DrawableTabBar: UITabBar, BackgroundColorApplicable, TintApplicable,
     DrawableBarType {
-    @IBInspectable public var barTintColorName: String = "" {
+    @IBInspectable open var barTintColorName: String = "" {
         didSet {
             applyBarTintColor()
         }
     }
     
-    @IBInspectable public var backgroundColorName: String = "" {
+    @IBInspectable open var backgroundColorName: String = "" {
         didSet {
             applyBackgroundColor()
         }
     }
-    @IBInspectable public var tintColorName: String = "" {
+    @IBInspectable open var tintColorName: String = "" {
         didSet {
             applyTintColor()
         }
     }
-    @IBInspectable public var tintAdjustmentModeName: String = "" {
+    @IBInspectable open var tintAdjustmentModeName: String = "" {
         didSet {
             applyTintColorAdjustmentMode()
         }

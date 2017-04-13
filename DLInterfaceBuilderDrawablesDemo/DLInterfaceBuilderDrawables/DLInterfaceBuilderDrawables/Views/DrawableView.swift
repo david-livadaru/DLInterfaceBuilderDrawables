@@ -8,62 +8,62 @@
 
 import UIKit
 
-@IBDesignable public class DrawableView : UIView, BackgroundColorApplicable, TintApplicable,
+@IBDesignable open class DrawableView: UIView, BackgroundColorApplicable, TintApplicable,
     CornerRadiusApplicable, BorderApplicable, ShadowApplicable {
-    @IBInspectable public var backgroundColorName: String = "" {
+    @IBInspectable open var backgroundColorName: String = "" {
         didSet {
             applyBackgroundColor()
         }
     }
-    @IBInspectable public var tintColorName: String = "" {
+    @IBInspectable open var tintColorName: String = "" {
         didSet {
             applyTintColor()
         }
     }
-    @IBInspectable public var tintAdjustmentModeName: String = "" {
+    @IBInspectable open var tintAdjustmentModeName: String = "" {
         didSet {
             applyTintColorAdjustmentMode()
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0.0 {
         didSet {
             applyCornerRadius()
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0.0 {
+    @IBInspectable open var borderWidth: CGFloat = 0.0 {
         didSet {
             applyBorder()
         }
     }
-    @IBInspectable public var borderColorName: String = "" {
+    @IBInspectable open var borderColorName: String = "" {
         didSet {
             applyBorder()
         }
     }
     
-    @IBInspectable public var shadowApplied: Bool = false {
+    @IBInspectable open var shadowApplied: Bool = false {
         didSet {
             applyShadow()
         }
     }
-    @IBInspectable public var shadowColorName: String = "" {
+    @IBInspectable open var shadowColorName: String = "" {
         didSet {
             applyShadow()
         }
     }
-    @IBInspectable public var shadowOpacity: Float = 0.0 {
+    @IBInspectable open var shadowOpacity: Float = 0.0 {
         didSet {
             applyShadow()
         }
     }
-    @IBInspectable public var shadowOffsetPoint: CGPoint = CGPoint(x: 0.0, y: -3.0) {
+    @IBInspectable open var shadowOffsetPoint: CGPoint = CGPoint(x: 0.0, y: -3.0) {
         didSet {
             applyShadow()
         }
     }
-    @IBInspectable public var shadowRadius: CGFloat = 3.0 {
+    @IBInspectable open var shadowRadius: CGFloat = 3.0 {
         didSet {
             applyShadow()
         }

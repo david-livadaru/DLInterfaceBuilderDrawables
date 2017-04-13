@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import CoreGraphics
-import QuartzCore
 
-public protocol CornerRadiusApplicable : DrawableType {
+public protocol CornerRadiusApplicable: DrawableType {
     var cornerRadius: CGFloat { get set }
     
     func applyCornerRadius()

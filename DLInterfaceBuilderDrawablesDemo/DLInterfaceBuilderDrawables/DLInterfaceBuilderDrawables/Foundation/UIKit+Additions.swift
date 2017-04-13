@@ -8,15 +8,15 @@
 
 import UIKit
 
-extension UIColor : StringValueConvertibleClass, DrawableType {
-    public static func convert(fromString string: String) -> AnyObject? {
-        let components = string.componentsSeparatedByString(".")
+extension UIColor: StringValueConvertibleClass, DrawableType {
+    public static func convert(from string: String) -> AnyObject? {
+        let components = string.components(separatedBy: ".")
         if let colorName = components.first,
-            let color = DLSelectorPerformer.performSelector(colorName, forClass: String(UIColor)) as? UIColor {
-            if components.count > 1, let colorAlphaFloat: Float? = Float(components[1]) {
-                let colorAlpha = colorAlphaFloat ?? 100.0
-                let colorAlphaComponent = CGFloat(opacity(from: colorAlpha / 100.0))
-                return color.colorWithAlphaComponent(colorAlphaComponent)
+            let color = DLSelectorPerformer.performSelector(colorName, forClass: String(describing: UIColor.self)) as? UIColor {
+            if components.count > 1,
+                let colorAlpha = Float(components[1]) {
+                let colorAlphaComponent = CGFloat(opacity(from: colorAlpha))
+                return color.withAlphaComponent(colorAlphaComponent)
             }
             return color
         } else {
@@ -27,7 +27,7 @@ extension UIColor : StringValueConvertibleClass, DrawableType {
 
 extension NSAttributedString {
     convenience public init(text: String, styleName: String) {
-        let style: Style = convert(fromString: styleName) ?? Style()
+        let style: Style = convert(from: styleName) ?? Style()
         self.init(text: text, style: style)
     }
     

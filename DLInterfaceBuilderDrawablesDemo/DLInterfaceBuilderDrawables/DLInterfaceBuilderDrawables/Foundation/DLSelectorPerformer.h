@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DLSelectorPerformer : NSObject
+@interface DLSelectorPerformer: NSObject
 
 + (id)performSelector:(NSString *)selectorName forClass:(NSString *)className;
 + (void)performNonReturnSelector:(NSString *)selectorName forClass:(NSString *)className;

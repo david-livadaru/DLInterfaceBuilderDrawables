@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol BackgroundColorApplicable : DrawableType {
+public protocol BackgroundColorApplicable: DrawableType {
     var backgroundColorName: String { get set }
     
     func applyBackgroundColor()
@@ -17,7 +17,7 @@ public protocol BackgroundColorApplicable : DrawableType {
 extension BackgroundColorApplicable where Self : UIView {
     public func applyBackgroundColor() {
         if backgroundColorName.characters.count > 0,
-            let color: UIColor = convert(fromString: backgroundColorName) {
+            let color: UIColor = DLInterfaceBuilderDrawables.convert(from: backgroundColorName) {
             backgroundColor = color
         }
     }

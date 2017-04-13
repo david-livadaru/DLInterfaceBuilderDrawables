@@ -6,13 +6,9 @@
 //  Copyright © 2016 Community. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
-import CoreGraphics
-import QuartzCore
 
-public protocol BorderApplicable : DrawableType {
+public protocol BorderApplicable: DrawableType {
     var borderWidth: CGFloat { get set }
     var borderColorName: String { get set }
     
@@ -22,8 +18,8 @@ public protocol BorderApplicable : DrawableType {
 extension BorderApplicable where Self : UIView {
     public func applyBorder() {
         layer.borderWidth = borderWidth
-        if let borderColor: UIColor = convert(fromString: borderColorName) {
-            layer.borderColor = borderColor.CGColor
+        if let borderColor: UIColor = DLInterfaceBuilderDrawables.convert(from: borderColorName) {
+            layer.borderColor = borderColor.cgColor
         }
     }
 }

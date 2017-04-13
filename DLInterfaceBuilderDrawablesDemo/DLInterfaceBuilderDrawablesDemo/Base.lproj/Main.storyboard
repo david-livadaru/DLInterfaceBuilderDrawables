@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,31 +20,49 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-Ci-M7T" customClass="DrawableView" customModule="DLInterfaceBuilderDrawables">
-                                <rect key="frame" x="180" y="20" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="67.5" y="54" width="240" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmk-xo-WNQ" userLabel="Child View">
+                                        <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hmk-xo-WNQ" secondAttribute="height" multiplier="1:1" id="CBt-kH-tnO"/>
+                                            <constraint firstAttribute="width" constant="44" id="wyK-Od-CRh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ZEx-QA-Ggt"/>
+                                    <constraint firstItem="hmk-xo-WNQ" firstAttribute="leading" secondItem="pdt-Ci-M7T" secondAttribute="leadingMargin" id="cv8-Pt-h8W"/>
+                                    <constraint firstItem="hmk-xo-WNQ" firstAttribute="top" secondItem="pdt-Ci-M7T" secondAttribute="topMargin" id="niz-1x-Voz"/>
                                     <constraint firstAttribute="width" constant="240" id="u3a-z5-3hM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderColorName" value="redColor"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="backgroundColorName" value="blueColor"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadowApplied" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="shadowColorName" value="blueColor"/>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffsetPoint">
+                                        <point key="value" x="-8" y="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="19"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0c-nK-yrE" customClass="DrawableBorderSideView" customModule="DLInterfaceBuilderDrawables">
-                                <rect key="frame" x="180" y="228" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="67.5" y="262" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderColorName" value="redColor"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -48,14 +71,102 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="borderSides" value="top, bottom, right"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-0N-8hT" customClass="DrawableActivityIndicator" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="177.5" y="475" width="20" height="20"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="colorName" value="magentaColor"/>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-icon" translatesAutoresizingMaskIntoConstraints="NO" id="h1C-zR-lWg" customClass="DrawableImageView" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="7.5" y="93" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1E4-w4-bQ9"/>
+                                    <constraint firstAttribute="width" secondItem="h1C-zR-lWg" secondAttribute="height" multiplier="1:1" id="U8j-QL-kFp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowApplied" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="shadowColorName" value="redColor"/>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffsetPoint">
+                                        <point key="value" x="-4" y="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tintColorName" value="greenColor"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEX-1g-krO" customClass="DrawableNavigationBar" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="9hI-Un-Csm"/>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="titleTextStyleName" value="redTextStyle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="backgroundColorName" value="orangeColor"/>
+                                </userDefinedRuntimeAttributes>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-K9-11f" customClass="DrawableLabel" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="280" y="537" width="42" height="28"/>
+                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textStyleName" value="redTextStyle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-fz-dxG" customClass="DrawableTabBar" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="LPF-04-h3Z"/>
+                                    <tabBarItem systemItem="more" id="Y4C-1C-QBE"/>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tintAdjustmentModeName" value="Dimmed"/>
+                                </userDefinedRuntimeAttributes>
+                            </tabBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kds-uL-h4Q" customClass="DrawableToolbar" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="0.0" y="567" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="NOJ-Tv-9df"/>
+                                </items>
+                            </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YVw-8i-uA7" customClass="DrawableProgressView" customModule="DLInterfaceBuilderDrawables">
+                                <rect key="frame" x="211" y="420" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="progressTintColorName" value="redColor"/>
+                                </userDefinedRuntimeAttributes>
+                            </progressView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TEb-fz-dxG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="87g-3E-nwr"/>
                             <constraint firstItem="V0c-nK-yrE" firstAttribute="width" secondItem="pdt-Ci-M7T" secondAttribute="width" id="DR9-3t-WkK"/>
+                            <constraint firstAttribute="trailing" secondItem="TEb-fz-dxG" secondAttribute="trailing" id="Fbb-v8-5kv"/>
+                            <constraint firstItem="kds-uL-h4Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fdp-KQ-L6d"/>
+                            <constraint firstItem="aZf-0N-8hT" firstAttribute="top" secondItem="V0c-nK-yrE" secondAttribute="bottom" constant="85" id="MIl-UK-cTh"/>
+                            <constraint firstItem="aZf-0N-8hT" firstAttribute="centerX" secondItem="V0c-nK-yrE" secondAttribute="centerX" id="MTa-fT-ez2"/>
+                            <constraint firstItem="zEX-1g-krO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NGc-F4-xas"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TEb-fz-dxG" secondAttribute="bottom" id="RMJ-BV-aSq"/>
+                            <constraint firstItem="pdt-Ci-M7T" firstAttribute="leading" secondItem="h1C-zR-lWg" secondAttribute="trailing" constant="10" id="RQa-BO-3bi"/>
+                            <constraint firstItem="pdt-Ci-M7T" firstAttribute="top" secondItem="zEX-1g-krO" secondAttribute="bottom" constant="10" id="T0P-Za-2BJ"/>
+                            <constraint firstItem="TEb-fz-dxG" firstAttribute="top" secondItem="kds-uL-h4Q" secondAttribute="bottom" constant="7" id="VdX-wk-TgK"/>
+                            <constraint firstItem="TEb-fz-dxG" firstAttribute="top" secondItem="gqT-K9-11f" secondAttribute="bottom" constant="53" id="W7E-4I-ri9"/>
                             <constraint firstItem="V0c-nK-yrE" firstAttribute="top" secondItem="pdt-Ci-M7T" secondAttribute="bottom" constant="80" id="Zaa-EP-Vwg"/>
-                            <constraint firstItem="pdt-Ci-M7T" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="h19-oA-JjZ"/>
+                            <constraint firstAttribute="trailing" secondItem="gqT-K9-11f" secondAttribute="trailing" constant="53" id="bDP-ph-fzM"/>
                             <constraint firstItem="pdt-Ci-M7T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jtY-Vg-9W9"/>
+                            <constraint firstItem="zEX-1g-krO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="kCF-1p-IaS"/>
+                            <constraint firstAttribute="trailing" secondItem="zEX-1g-krO" secondAttribute="trailing" id="m3m-60-AqW"/>
                             <constraint firstItem="V0c-nK-yrE" firstAttribute="centerX" secondItem="pdt-Ci-M7T" secondAttribute="centerX" id="mkx-L2-G8F"/>
+                            <constraint firstAttribute="trailing" secondItem="kds-uL-h4Q" secondAttribute="trailing" id="rQj-56-LLy"/>
+                            <constraint firstItem="h1C-zR-lWg" firstAttribute="centerY" secondItem="pdt-Ci-M7T" secondAttribute="centerY" id="xp0-tV-2z0"/>
                             <constraint firstItem="V0c-nK-yrE" firstAttribute="height" secondItem="pdt-Ci-M7T" secondAttribute="height" id="yEN-P0-ErJ"/>
                         </constraints>
                     </view>
@@ -64,4 +175,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="search-icon" width="600" height="598"/>
+    </resources>
 </document>

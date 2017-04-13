@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol TintApplicable : DrawableType {
+public protocol TintApplicable: DrawableType {
     var tintColorName: String { get set }
     var tintAdjustmentModeName: String { get set }
     
@@ -18,29 +18,30 @@ public protocol TintApplicable : DrawableType {
 
 extension TintApplicable where Self : UIView {
     public func applyTintColor() {
-        if tintColorName.characters.count > 0, let color: UIColor = convert(fromString: tintColorName) {
+        if tintColorName.characters.count > 0,
+            let color: UIColor = DLInterfaceBuilderDrawables.convert(from: tintColorName) {
             tintColor = color
         }
     }
     
     public func applyTintColorAdjustmentMode() {
         if tintAdjustmentModeName.characters.count > 0,
-            let adjustmentMode = UIViewTintAdjustmentMode.convert(fromString: tintAdjustmentModeName) {
+            let adjustmentMode = UIViewTintAdjustmentMode.convert(from: tintAdjustmentModeName) {
             tintAdjustmentMode = adjustmentMode
         }
     }
 }
 
-extension UIViewTintAdjustmentMode : StringValueConvertibleType {
-    public static func convert(fromString string: String) -> UIViewTintAdjustmentMode? {
+extension UIViewTintAdjustmentMode: StringValueConvertibleType {
+    public static func convert(from string: String) -> UIViewTintAdjustmentMode? {
         guard string.characters.count > 0 else { return nil }
-        switch string.lowercaseString {
+        switch string.lowercased() {
         case "normal":
-            return .Normal
+            return .normal
         case "dimmed":
-            return .Dimmed
+            return .dimmed
         default:
-            return .Automatic
+            return .automatic
         }
     }
 }

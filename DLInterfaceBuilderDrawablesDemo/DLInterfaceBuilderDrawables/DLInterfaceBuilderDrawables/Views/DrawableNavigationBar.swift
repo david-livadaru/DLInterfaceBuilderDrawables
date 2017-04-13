@@ -8,38 +8,38 @@
 
 import UIKit
 
-@IBDesignable public class DrawableNavigationBar : UINavigationBar, BackgroundColorApplicable, TintApplicable,
+@IBDesignable open class DrawableNavigationBar: UINavigationBar, BackgroundColorApplicable, TintApplicable,
     DrawableBarType {
-    @IBInspectable public var barTintColorName: String = "" {
+    @IBInspectable open var barTintColorName: String = "" {
         didSet {
             applyBarTintColor()
         }
     }
     
-    @IBInspectable public var titleTextStyleName: String = "" {
+    @IBInspectable open var titleTextStyleName: String = "" {
         didSet {
             applyTitleTextStyle()
         }
     }
     
-    @IBInspectable public var backgroundColorName: String = "" {
+    @IBInspectable open var backgroundColorName: String = "" {
         didSet {
             applyBackgroundColor()
         }
     }
-    @IBInspectable public var tintColorName: String = "" {
+    @IBInspectable open var tintColorName: String = "" {
         didSet {
             applyTintColor()
         }
     }
-    @IBInspectable public var tintAdjustmentModeName: String = "" {
+    @IBInspectable open var tintAdjustmentModeName: String = "" {
         didSet {
             applyTintColorAdjustmentMode()
         }
     }
     
-    private func applyTitleTextStyle() {
-        if let titleTextStyle: Style = convert(fromString: titleTextStyleName) {
+    fileprivate func applyTitleTextStyle() {
+        if let titleTextStyle: Style = DLInterfaceBuilderDrawables.convert(from: titleTextStyleName) {
             titleTextAttributes = titleTextStyle.attributes
         }
     }

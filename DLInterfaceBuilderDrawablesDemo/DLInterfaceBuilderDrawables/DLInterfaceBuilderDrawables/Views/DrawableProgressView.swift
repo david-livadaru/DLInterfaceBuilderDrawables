@@ -8,27 +8,27 @@
 
 import UIKit
 
-@IBDesignable public class DrawableProgressView: UIProgressView {
-    @IBInspectable public var progressTintColorName: String = "" {
+@IBDesignable open class DrawableProgressView: UIProgressView {
+    @IBInspectable open var progressTintColorName: String = "" {
         didSet {
             applyProgressTintColor()
         }
     }
     
-    @IBInspectable public var trackTintColorName: String = "" {
+    @IBInspectable open var trackTintColorName: String = "" {
         didSet {
             applyTrackTintColor()
         }
     }
     
-    private func applyProgressTintColor() {
-        if let color: UIColor = convert(fromString: progressTintColorName) {
+    fileprivate func applyProgressTintColor() {
+        if let color: UIColor = DLInterfaceBuilderDrawables.convert(from: progressTintColorName) {
             progressTintColor = color
         }
     }
     
-    private func applyTrackTintColor() {
-        if let color: UIColor = convert(fromString: trackTintColorName) {
+    fileprivate func applyTrackTintColor() {
+        if let color: UIColor = DLInterfaceBuilderDrawables.convert(from: trackTintColorName) {
             trackTintColor = color
         }
     }

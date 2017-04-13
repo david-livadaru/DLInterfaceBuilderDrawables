@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol DrawableType : NSObjectProtocol {}
+public protocol DrawableType: NSObjectProtocol {}
 
 extension DrawableType {
     static func opacity(from float: Float) -> Float {

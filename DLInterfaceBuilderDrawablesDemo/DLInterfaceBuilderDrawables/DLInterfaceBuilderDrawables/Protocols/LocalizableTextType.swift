@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol LocalizableTextType : DrawableType {
+public protocol LocalizableTextType: DrawableType {
     var localizedTextKey: String { get set }
     var localizedTextComment: String { get set }
     

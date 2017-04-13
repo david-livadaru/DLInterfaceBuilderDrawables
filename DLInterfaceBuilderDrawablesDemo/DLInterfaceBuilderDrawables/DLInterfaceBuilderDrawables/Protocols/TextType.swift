@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol TextType : DrawableType {
+public protocol TextType: DrawableType {
     var text: String? { get set }
 }

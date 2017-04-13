@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol DrawableBarType : DrawableType {
+public protocol DrawableBarType: DrawableType {
     var barTintColorName: String { get set }
     var barTintColor: UIColor? { get set }
     
@@ -17,7 +17,7 @@ public protocol DrawableBarType : DrawableType {
 
 extension DrawableBarType where Self : UIView {
     public func applyBarTintColor() {
-        if let barColor: UIColor = convert(fromString: barTintColorName) {
+        if let barColor: UIColor = DLInterfaceBuilderDrawables.convert(from: barTintColorName) {
             barTintColor = barColor
         }
     }

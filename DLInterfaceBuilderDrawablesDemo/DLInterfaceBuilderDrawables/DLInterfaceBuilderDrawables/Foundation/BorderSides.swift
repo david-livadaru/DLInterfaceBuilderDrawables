@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BorderSides : OptionSetType {
+public struct BorderSides: OptionSet {
     public let rawValue: Int
     
     public init(rawValue: Int) {
@@ -21,25 +21,25 @@ public struct BorderSides : OptionSetType {
     static public let Right = BorderSides(rawValue: 1 << 3)
 }
 
-extension BorderSides : StringValueConvertibleType {
-    public static func convert(fromString string: String) -> BorderSides? {
-        let nonSpaceString = string.stringByReplacingOccurrencesOfString(" ", withString: "")
-        let stringSides = nonSpaceString.componentsSeparatedByString(",")
+extension BorderSides: StringValueConvertibleType {
+    public static func convert(from string: String) -> BorderSides? {
+        let nonSpaceString = string.replacingOccurrences(of: " ", with: "")
+        let stringSides = nonSpaceString.components(separatedBy: ",")
         var sides: BorderSides? = nil
         for stringSide in stringSides {
-            if let side = BorderSides.borderSide(fromString: stringSide) {
+            if let side = BorderSides.borderSide(from: stringSide) {
                 if sides == nil {
                     sides = side
                 } else {
-                    sides?.unionInPlace(side)
+                    sides?.formUnion(side)
                 }
             }
         }
         return sides
     }
     
-    private static func borderSide(fromString fromString: String) -> BorderSides? {
-        switch fromString.lowercaseString {
+    private static func borderSide(from string: String) -> BorderSides? {
+        switch string.lowercased() {
         case "top":
             return .Top
         case "left":

@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol PlaceholderType : DrawableType {
+public protocol PlaceholderType: DrawableType {
     var placeholder: String? { get set }
 }

@@ -6,13 +6,9 @@
 //  Copyright © 2016 Community. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
-import CoreGraphics
-import QuartzCore
 
-public protocol ShadowApplicable : DrawableType {
+public protocol ShadowApplicable: DrawableType {
     var shadowApplied: Bool { get set }
     var shadowColorName: String { get }
     var shadowOpacity: Float { get set }
@@ -25,8 +21,8 @@ public protocol ShadowApplicable : DrawableType {
 extension ShadowApplicable where Self : UIView {
     public func applyShadow() {
         if shadowApplied {
-            if let shadowColor: UIColor = convert(fromString: shadowColorName) {
-                layer.shadowColor = shadowColor.CGColor
+            if let shadowColor: UIColor = DLInterfaceBuilderDrawables.convert(from: shadowColorName) {
+                layer.shadowColor = shadowColor.cgColor
             }
             layer.shadowOpacity = Self.opacity(from: shadowOpacity)
             layer.shadowOffset = CGSize(width: shadowOffsetPoint.x, height: shadowOffsetPoint.y)
