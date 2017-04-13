@@ -142,6 +142,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="progressTintColorName" value="redColor"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="trackTintColorName" value="blueColor.35"/>
                                 </userDefinedRuntimeAttributes>
                             </progressView>
                         </subviews>

@@ -23,7 +23,8 @@ extension StringValueConvertibleClass where Self : NSObject {
     }
     
     static public func convert(from string: String) -> AnyObject? {
-        if let value = DLSelectorPerformer.performSelector(string, forClass: moduleName() + "." + String(describing: Self.self)) {
+        if let invocation = DLInvocation(with: Self.self, selectorName: string),
+            let value = invocation.valueFromInvocation() {
             return value as AnyObject
         } else {
             return nil

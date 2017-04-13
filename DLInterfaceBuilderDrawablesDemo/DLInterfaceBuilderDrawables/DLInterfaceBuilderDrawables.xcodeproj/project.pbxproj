@@ -10,8 +10,6 @@
 		6311321D1D3EE7370052EE4F /* DrawableBorderSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311321C1D3EE7370052EE4F /* DrawableBorderSideView.swift */; };
 		6311321F1D3EE9B20052EE4F /* BorderSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311321E1D3EE9B20052EE4F /* BorderSides.swift */; };
 		6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */; };
-		6311FA701D3D5ED100A114A1 /* DLSelectorPerformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */; };
 		6311FA731D3D5F2E00A114A1 /* StringValueConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */; };
 		6311FA781D3D623B00A114A1 /* UIKit+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */; };
 		6311FA7A1D3D628100A114A1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6311FA791D3D628100A114A1 /* Style.swift */; };
@@ -39,14 +37,16 @@
 		6380706D1D453CAC0043CDC2 /* AttributedTextType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380706C1D453CAC0043CDC2 /* AttributedTextType.swift */; };
 		6380706F1D453D120043CDC2 /* AttributedPlacedholderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380706E1D453D120043CDC2 /* AttributedPlacedholderType.swift */; };
 		638070711D45401C0043CDC2 /* Foundation+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638070701D45401C0043CDC2 /* Foundation+Additions.swift */; };
+		63BD01161EA0074C00BDD080 /* DLInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BD01121EA0074C00BDD080 /* DLInvocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63BD01171EA0074C00BDD080 /* DLInvocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD01131EA0074C00BDD080 /* DLInvocation.m */; };
+		63BD01181EA0074C00BDD080 /* DLInvocation+FoundationMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BD01141EA0074C00BDD080 /* DLInvocation+FoundationMapping.h */; };
+		63BD01191EA0074C00BDD080 /* DLInvocation+FoundationMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD01151EA0074C00BDD080 /* DLInvocation+FoundationMapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6311321C1D3EE7370052EE4F /* DrawableBorderSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableBorderSideView.swift; sourceTree = "<group>"; };
 		6311321E1D3EE9B20052EE4F /* BorderSides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSides.swift; sourceTree = "<group>"; };
 		6311FA6B1D3D5E1000A114A1 /* DrawableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableType.swift; sourceTree = "<group>"; };
-		6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLSelectorPerformer.h; sourceTree = "<group>"; };
-		6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLSelectorPerformer.m; sourceTree = "<group>"; };
 		6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringValueConvertible.swift; sourceTree = "<group>"; };
 		6311FA771D3D623B00A114A1 /* UIKit+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Additions.swift"; sourceTree = "<group>"; };
 		6311FA791D3D628100A114A1 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -76,6 +76,10 @@
 		6380706C1D453CAC0043CDC2 /* AttributedTextType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedTextType.swift; sourceTree = "<group>"; };
 		6380706E1D453D120043CDC2 /* AttributedPlacedholderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedPlacedholderType.swift; sourceTree = "<group>"; };
 		638070701D45401C0043CDC2 /* Foundation+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Additions.swift"; sourceTree = "<group>"; };
+		63BD01121EA0074C00BDD080 /* DLInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLInvocation.h; sourceTree = "<group>"; };
+		63BD01131EA0074C00BDD080 /* DLInvocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLInvocation.m; sourceTree = "<group>"; };
+		63BD01141EA0074C00BDD080 /* DLInvocation+FoundationMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLInvocation+FoundationMapping.h"; sourceTree = "<group>"; };
+		63BD01151EA0074C00BDD080 /* DLInvocation+FoundationMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DLInvocation+FoundationMapping.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +134,10 @@
 		6311FA6D1D3D5ED100A114A1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				6311FA6E1D3D5ED100A114A1 /* DLSelectorPerformer.h */,
-				6311FA6F1D3D5ED100A114A1 /* DLSelectorPerformer.m */,
+				63BD01121EA0074C00BDD080 /* DLInvocation.h */,
+				63BD01131EA0074C00BDD080 /* DLInvocation.m */,
+				63BD01141EA0074C00BDD080 /* DLInvocation+FoundationMapping.h */,
+				63BD01151EA0074C00BDD080 /* DLInvocation+FoundationMapping.m */,
 				6311321E1D3EE9B20052EE4F /* BorderSides.swift */,
 				638070701D45401C0043CDC2 /* Foundation+Additions.swift */,
 				6311FA721D3D5F2E00A114A1 /* StringValueConvertible.swift */,
@@ -176,7 +182,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6311FA701D3D5ED100A114A1 /* DLSelectorPerformer.h in Headers */,
+				63BD01181EA0074C00BDD080 /* DLInvocation+FoundationMapping.h in Headers */,
+				63BD01161EA0074C00BDD080 /* DLInvocation.h in Headers */,
 				6377EE4D1D3D52E000D5FAFC /* DLInterfaceBuilderDrawables.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,17 +262,18 @@
 				6311FA6C1D3D5E1000A114A1 /* DrawableType.swift in Sources */,
 				6380706F1D453D120043CDC2 /* AttributedPlacedholderType.swift in Sources */,
 				638070511D452D9F0043CDC2 /* DrawableProgressView.swift in Sources */,
+				63BD01191EA0074C00BDD080 /* DLInvocation+FoundationMapping.m in Sources */,
 				6311321F1D3EE9B20052EE4F /* BorderSides.swift in Sources */,
 				6380705D1D45323A0043CDC2 /* LocalizableTextType.swift in Sources */,
 				638070451D4522D30043CDC2 /* CornerRadiusApplicable.swift in Sources */,
 				6380705F1D4534AE0043CDC2 /* TextType.swift in Sources */,
 				638070491D45230D0043CDC2 /* ShadowApplicable.swift in Sources */,
-				6311FA711D3D5ED100A114A1 /* DLSelectorPerformer.m in Sources */,
 				6380706D1D453CAC0043CDC2 /* AttributedTextType.swift in Sources */,
 				6380704F1D452B490043CDC2 /* DrawableToolbar.swift in Sources */,
 				638070471D4522FB0043CDC2 /* BorderApplicable.swift in Sources */,
 				638070531D452FD10043CDC2 /* DrawableLabel.swift in Sources */,
 				638070631D4535000043CDC2 /* LocalizablePlaceholderType.swift in Sources */,
+				63BD01171EA0074C00BDD080 /* DLInvocation.m in Sources */,
 				638070651D45364C0043CDC2 /* TitleType.swift in Sources */,
 				638070611D4534D80043CDC2 /* PlaceholderType.swift in Sources */,
 				638070671D4536820043CDC2 /* LocalizableTitleType.swift in Sources */,

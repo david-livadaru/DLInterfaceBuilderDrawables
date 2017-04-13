@@ -12,10 +12,11 @@ extension UIColor: StringValueConvertibleClass, DrawableType {
     public static func convert(from string: String) -> AnyObject? {
         let components = string.components(separatedBy: ".")
         if let colorName = components.first,
-            let color = DLSelectorPerformer.performSelector(colorName, forClass: String(describing: UIColor.self)) as? UIColor {
+            let invocation = DLInvocation(with: UIColor.self, selectorName: colorName),
+            let color = invocation.valueFromInvocation() as? UIColor {
             if components.count > 1,
                 let colorAlpha = Float(components[1]) {
-                let colorAlphaComponent = CGFloat(opacity(from: colorAlpha))
+                let colorAlphaComponent = CGFloat(opacity(from: colorAlpha / 100.0))
                 return color.withAlphaComponent(colorAlphaComponent)
             }
             return color
